@@ -1,4 +1,4 @@
-package c1
+package prefix_sum
 
 import (
 	"testing"

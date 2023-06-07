@@ -1,4 +1,4 @@
-package array
+package window
 
 import "testing"
 
