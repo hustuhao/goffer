@@ -1,6 +1,6 @@
 package ipqueue
 
-// 优先队列（Priority Queue）：一种特殊的队列，等同于大顶堆。
+// 优先队列（Priority Queue）：一种特殊的队列，等同于小顶堆。
 // 在优先队列中，元素被赋予优先级，当访问队列元素时，具有最高优先级的元素最先删除。
 
 // Item 队列中的元素
@@ -60,7 +60,7 @@ func (pq *PriorityQueue[T]) Offer(item *Item[T]) {
 	pq.heapifyUp(len(*pq) - 1)
 }
 
-// Poll 移除最高优先级的元素，并调用 heapifyDown() 方法保持堆的特性。
+// Poll 移除最低优先级的元素，并调用 heapifyDown() 方法保持堆的特性。
 func (pq *PriorityQueue[T]) Poll() *Item[T] {
 	top := (*pq)[0]
 	(*pq)[0] = (*pq)[len(*pq)-1]

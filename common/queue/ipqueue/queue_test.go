@@ -38,9 +38,8 @@ func TestUnsortedInsert(t *testing.T) {
 	sort.Sort(sort.IntSlice(ints))
 
 	for i := 0; i < c; i++ {
-		item1 := pq.Get(0)
-		item2 := pq.Poll()
-		assert.Equal(t, item1.Value, item2.Value)
+		item := pq.Poll()
+		assert.Equal(t, int(item.Priority), ints[i])
 	}
 }
 
